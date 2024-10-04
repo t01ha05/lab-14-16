@@ -2,7 +2,7 @@
  * Title: Lab 14: Color Class
  * Description: Create a Color class that manages RGB values using private member variables, with setter, getter, and print methods. In the main function, several Color objects are created, populated, and their values are displayed using the print method.
  * Author: Talha Ahmed
- * Lab: 14
+ * Lab: 16
  * Class: COMSC-210
  */
 
@@ -16,8 +16,12 @@ private:
     int red, green, blue;
 
 public:
-    //Constructor(intilaizie colors)
-    Color(int r=0, int g=0, int b=0) : red(r), green(g), blue(b) {}
+    //default Constructor
+    Color() : red(0), green(0), blue(0) {}
+    //parameterized constructor
+    Color (int r, int g, int b) : red (r), green (g), blue(b) {}
+    //partial constructor
+    Color (int r) : red (r), green(0), blue (0) {}
 
     //Setter methods for colors
     void setRed(int r) { red = r;}
@@ -41,6 +45,7 @@ int main() {
     Color color2(0,255,0); //green
     Color color3(0,0,255); //blue
     Color color4; // default bllack
+    Color color5 (128);
 
     //populate color
     color4.setRed(128);
@@ -52,6 +57,7 @@ int main() {
     color2.print();
     color3.print();
     color4.print();
+    color5.print();
 
     return 0;
 }
